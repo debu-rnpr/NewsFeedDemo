@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.landing.MainActivity">
+
+    <FrameLayout
+        android:layout_width="360dp"
+        android:layout_height="477dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        android:id="@+id/frameLayout"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0">
+
+    </FrameLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/cardView"
+        android:elevation="2dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/icon_group">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/home_selector"
+                android:padding="5dp"
+                android:id="@+id/home"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/favorite_selector"
+                android:padding="5dp"
+                android:id="@+id/fab"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/create_selector"
+                android:padding="5dp"
+                android:id="@+id/create"
+                />
+        </RadioGroup>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
