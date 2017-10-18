@@ -2,6 +2,7 @@ package app.feed.com.ui.landing.favourite.fragment;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,6 +23,7 @@ import app.feed.com.presenter.PresenterHome;
 import app.feed.com.ui.common.BaseFragment;
 import app.feed.com.ui.common.FavouriteManager;
 import app.feed.com.ui.common.adapter.AdapterListing;
+import app.feed.com.ui.details.DetailsActivity;
 import app.feed.com.ui.injection.ActivityContext;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,7 +69,9 @@ public class FavouriteFragment extends BaseFragment implements AdapterListing.Li
 
     @Override
     public void onListDetailsClicked(int pos) {
-        Log.e("onListDetailsClicked",pos+"");
+        Intent intent = new Intent(context, DetailsActivity.class);
+        intent.putExtra("feed",favouriteManager.getFavList().get(pos));
+        startActivity(intent);
     }
 
     @Override
